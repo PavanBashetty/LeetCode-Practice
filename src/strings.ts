@@ -107,3 +107,13 @@ export function strStr(haystack: string, needle: string): number {
     }
     return -1
 };
+
+/**
+ * 58. Length of Last Word
+ */
+export function lengthOfLastWord(s: string): number {
+    s = s.trim();
+    let strinArr:string[] = s.split(" ");
+    let lastword = strinArr[strinArr.length - 1]
+    return lastword.length 
+};

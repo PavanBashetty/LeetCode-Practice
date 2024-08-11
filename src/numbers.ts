@@ -48,3 +48,34 @@ export function romanToInt(s:string):number{
     }
     return total
 }
+
+/**
+35. Search Insert Position
+*/
+
+export function searchInsert(nums:number[],target:number):number{ //nums = [1,3,5,6], target = 4
+    for(let i=1;i<=nums.length;i++){
+        if(target < nums[0]) return 0
+        if(nums[i-1] == target) return i-1
+        if(nums[i-1] !== target && target > nums[i-1] && target < nums[i]) return i
+        if(i == nums.length) return i
+    }
+    return 0
+}
+
+/**
+ * 66. Plus One
+ */
+export function plusOne(digits:number[]):number[]{
+    // let arrToInt:number = Number(digits.reduce((sum, currValue)=>sum+currValue,'')) + 1;
+    // return arrToInt.toString().split('').map(Number)
+    for(let i=digits.length-1; i>=0;i--){
+        if(digits[i] < 9){
+            digits[i]++
+            return digits
+        }
+        digits[i] = 0
+    }
+    digits.unshift(1)
+    return digits
+}
