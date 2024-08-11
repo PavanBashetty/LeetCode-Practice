@@ -172,3 +172,45 @@ export function longestCommonPrefix(strs:string[]):string{
     }
     return prefix;
 }
+
+/**
+ * Flatten a multilevel nested array
+ * e.g: Input = [1,2,[3,4,[10,11]],5]
+ *      output = [1, 2, 3, 4, 10, 11, 5]
+ */
+
+export function flattenArray(inputArr: any[]):any[]{
+    let result:any[] = [];
+    for(let i=0; i<inputArr.length;i++){
+      if(Array.isArray(inputArr[i])){
+        result = result.concat(flattenArray(inputArr[i]))
+      }else{
+        result.push(inputArr[i])
+      }
+    }
+    return result
+}
+
+/**
+ * 26. Remove Duplicates from Sorted Array
+ */
+export function removeDuplicates(nums:number[]):number{
+    nums.sort((a,b)=>a-b);
+    const uniqueNumbers:number[] = [... new Set(nums)]
+    console.log(uniqueNumbers)
+    return uniqueNumbers.length
+}
+
+/**
+ * 27. Remove Element
+ */
+export function removeElement(nums: number[], val: number): number {
+    let j:number=0;
+    for(let i=0;i<nums.length;i++){
+        if(nums[i] !== val){
+            nums[j] = nums[i];
+            j++
+        }
+    }
+    return j
+};
