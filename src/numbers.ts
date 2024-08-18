@@ -79,3 +79,46 @@ export function plusOne(digits:number[]):number[]{
     digits.unshift(1)
     return digits
 }
+
+/**
+ * 69. Sqrt(x)
+ */
+export function mySqrt(x: number): number {
+    if(x<2) return x;
+
+    let left = 1;
+    let right = x;
+    while(left<=right){
+        const mid = Math.floor(left + (right-left)/2);
+        const square = mid * mid;
+
+        if(square === x){
+            return mid;
+        }else if(square < x){
+            left = mid + 1
+        }else{
+            right = mid -1
+        }
+    }
+
+    return right
+};
+
+/**
+ * 70. Climbing Stairs
+ */
+
+export function climbStairs(n: number): number {
+    if (n <= 2) return n;
+
+    let oneStepBefore = 2;
+    let twoStepsBefore = 1;
+    let allWays = 0;
+
+    for (let i = 3; i <= n; i++) {
+        allWays = oneStepBefore + twoStepsBefore;
+        twoStepsBefore = oneStepBefore;
+        oneStepBefore = allWays;
+    }
+    return allWays;
+};

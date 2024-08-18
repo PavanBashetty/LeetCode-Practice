@@ -29,4 +29,6 @@ import * as NumberFunctions from './numbers';
 // console.log(NumberFunctions.isNumPalindrome(-121)); //false
 // console.log(NumberFunctions.romanToInt('IV')); //4
 // console.log(NumberFunctions.searchInsert([1,3,5,6,8],9)) //5
-console.log(NumberFunctions.plusOne([1,2,4]))
+// console.log(NumberFunctions.plusOne([1,2,4]))
+// console.log(NumberFunctions.mySqrt(20))
+console.log(NumberFunctions.climbStairs(3))
