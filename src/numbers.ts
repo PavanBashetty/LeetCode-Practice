@@ -122,3 +122,41 @@ export function climbStairs(n: number): number {
     }
     return allWays;
 };
+
+/**
+ * You are given an array of integers called nums. Your task is to create a new array result such that each element at index i of the result 
+ * is the product of all the elements in nums except nums[i].
+    Important:
+    You cannot use division in this problem.
+    Try to solve the problem in O(n) time complexity.
+    𝐈𝐧𝐩𝐮𝐭:
+    nums = [1, 2, 3, 4]
+    Output:
+    result = [24, 12, 8, 6]
+ */
+
+export function doubleElementValues(inpArr:number[]):number[]{
+    let output:number[] = []
+    if(inpArr.length < 2) return inpArr
+    for(let i=0;i<inpArr.length;i++){
+        output.push(inpArr.reduce((sum,curr,index)=>{
+            if(index == i){
+                return sum
+            }
+            return sum*curr;
+        },1))
+    }
+    return output
+}
+
+/**
+ * 136. Single Number
+ */
+
+export function singleNumber(nums:number[]):number{
+    let output:number = 0;
+    for(let num of nums){
+        output = output ^ num
+    }
+    return output
+}

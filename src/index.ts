@@ -31,4 +31,6 @@ import * as NumberFunctions from './numbers';
 // console.log(NumberFunctions.searchInsert([1,3,5,6,8],9)) //5
 // console.log(NumberFunctions.plusOne([1,2,4]))
 // console.log(NumberFunctions.mySqrt(20))
-console.log(NumberFunctions.climbStairs(3))
+// console.log(NumberFunctions.climbStairs(3))
+// console.log(NumberFunctions.doubleElementValues([5,4,6,7,8,2]))
+console.log(NumberFunctions.singleNumber([2,2,1,3,4,1,4]))
